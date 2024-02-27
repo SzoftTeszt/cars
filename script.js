@@ -58,3 +58,34 @@ for (let i = 1; i < 4; i++) {
 
     document.getElementsByClassName("carousel-inner")[0].appendChild(doboz)
 }
+
+
+
+function kartyak(){
+    for (let i = 1; i < 9; i++) {
+        let cella=document.createElement('div')
+        cella.className="col-12 col-md-6 col-lg-4 col-xl-3"
+
+        let card=document.createElement('div')
+        card.className="card bg-dark text-white mb-4"
+
+        let img =document.createElement('img')
+        img.src="./pics/image"+i+".jpg"
+        img.alt="car"
+        img.className="card-img-top"
+
+        card.appendChild(img)
+        card.innerHTML += `
+        <div class="card-body">
+            <h3 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>`
+        console.log("Cella",cella)
+        console.log("Card",card)
+        cella.appendChild(card)
+        document.getElementById("cards").appendChild(cella)
+    }
+}
+
+kartyak();
